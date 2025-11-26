@@ -1,24 +1,20 @@
-// src/App.jsx
 import { useState } from "react"
 import movieData from "./data.json"
 import MovieCard from "./components/MovieCard"
 import './App.css'
 
 export default function App() {
-    // --- 1. STATE MANAGEMENT ---
     // State to hold the list of movies (initialized from the JSON file)
     const [movies, setMovies] = useState(movieData)
     // State for the search input
     const [searchTerm, setSearchTerm] = useState("")
-    // State for sorting preference ('rating' or 'name')
+    // State for sorting preference 
     const [sortBy, setSortBy] = useState("rating")
 
     // State for the "Add New Movie" form inputs
     const [newMovie, setNewMovie] = useState({
         name: "", description: "", image: "", rating: 1
     })
-
-    // --- 2. LOGIC FUNCTIONS ---
 
     // Function to delete a movie by its ID
     const deleteMovie = (id) => {
@@ -66,7 +62,6 @@ export default function App() {
             return 0
         })
 
-    // --- 3. RENDERING THE UI ---
     return (
         <div className="container" style={{padding: "20px", maxWidth: "1200px", margin: "0 auto", fontFamily: "Arial, sans-serif"}}>
             
